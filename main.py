@@ -47,25 +47,25 @@ def convert_to_plural(bitstring):
     return result_set
 
 
-def plural_OR(set1, set2):
+def set_OR(set1, set2):
     array1 = convert_to_bitstring(set1)
     array2 = convert_to_bitstring(set2)
     result_array = [1 if a | b  else 0 for a, b in zip(array1, array2)]
     return convert_to_plural(result_array)
 
-def plural_AND(set1, set2):
+def set_AND(set1, set2):
     array1 = convert_to_bitstring(set1)
     array2 = convert_to_bitstring(set2)
     result_array = [1 if a & b  else 0 for a, b in zip(array1, array2)]
     return convert_to_plural(result_array)
 
-def plural_XOR(set1, set2):
+def set_XOR(set1, set2):
     array1 = convert_to_bitstring(set1)
     array2 = convert_to_bitstring(set2)
     result_array = [1 if a ^ b  else 0 for a, b in zip(array1, array2)]
     return convert_to_plural(result_array)
 
-def plural_NOT(set):
+def set_NOT(set):
     array = convert_to_bitstring(set)
     result_array = [0 if a else 1 for a in array]
     return convert_to_plural(result_array)
@@ -77,6 +77,6 @@ def plural_NOT(set):
 # print(set_complement(a))
 
 
-# print(plural_AND(a, b))
-# print(plural_OR(a, b))
-# print(plural_XOR(a, b))
+# print(set_OR(a, b))
+# print(set_AND(a, b))
+# print(set_XOR(a, b))
